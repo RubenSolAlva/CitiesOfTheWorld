@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
+import com.google.android.gms.maps.model.BitmapDescriptor;
+import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MapStyleOptions;
 import com.google.android.gms.maps.model.Marker;
@@ -78,7 +80,7 @@ public class MapFragment extends Fragment implements OnMapReadyCallback, GoogleM
                     double lat = Double.parseDouble(arrayListCityDB.get(j).getLat());
                     double lng = Double.parseDouble(arrayListCityDB.get(j).getLng());
                     LatLng latLng = new LatLng(lat, lng);
-                    googleMap.addMarker(new MarkerOptions().position(latLng).title(arrayListCityDB.get(j).getName()));
+                    googleMap.addMarker(new MarkerOptions().position(latLng).title(arrayListCityDB.get(j).getName()).icon(BitmapDescriptorFactory.fromResource(R.mipmap.ic_launcher)));
                 }
         }
         googleMap.setOnMarkerClickListener(this);
